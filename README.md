@@ -36,16 +36,20 @@ DragonFlyBSD release, I experienced the following results:
    * Optionally: Retrieve from the SVN repository
 2. Unzip or clone this repository
 3. Execute the shell file contained within
-   1. ./deploy-sys-objects.sh
+   ```
+   ./deploy-sys-objects.sh
+   ```
 4. Build kernel modules
-   ``` cd /usr/src/sys/modules/urtwn/
-        make clean
-        make
-        make install
-        cd ../urtwnfw
-        make clean
-        make
-        make install```
+   ```
+   cd /usr/src/sys/modules/urtwn/
+   make clean
+   make
+   make install
+   cd ../urtwnfw
+   make clean
+   make
+   make install
+   ```
 5. Update your system configuration to use the if_urtwn.ko
    module
    * Refer to FreeBSD Handbook
