@@ -27,7 +27,7 @@ fi
 # Copy Makefiles to /usr/src/sys/modules
 if [ -d modules ]; then
     if [ -d /usr/src/sys/modules ]; then
-	cp -R modules/urtwn/ modules/urtwnfw/ /usr/src/sys/modules/
+	cp -R modules/urtwn modules/urtwnfw /usr/src/sys/modules/
     else
 	printf "/usr/src/sys/modules is missing\n"
 	printf "refer to FreeBSD Handbook on installing source\n"
