@@ -1341,7 +1341,7 @@ urtwn_alloc_list(struct urtwn_softc *sc, struct urtwn_data data[],
 #if defined(__DragonFly__)
 		dp->buf = kmalloc(maxsz, M_USBDEV, M_INTWAIT);
 #else
-		dp->buf = malloc(maxsz, M_USBDEV, M_WAITOK);
+		dp->buf = malloc(maxsz, M_USBDEV, M_NOWAIT);
 #endif
 		if (dp->buf == NULL) {
 			device_printf(sc->sc_dev,
@@ -5088,7 +5088,7 @@ urtwn_node_alloc(struct ieee80211vap *vap,
 		     M_INTWAIT | M_ZERO);
 #else
 	un = malloc(sizeof(struct urtwn_node), M_80211_NODE, 
-			M_WAITOK | M_ZERO);
+			M_NOWAIT | M_ZERO);
 #endif
 
 	if (un == NULL)
